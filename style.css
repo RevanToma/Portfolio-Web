@@ -205,6 +205,8 @@ main .infoText {
     width: 100%;
     padding: 50px 8%;
     background: var(--main-background--);
+    height: 100vh;
+
 
 }
 
@@ -233,6 +235,7 @@ main .infoText {
     grid-gap: 70px;
     grid-template-areas: 'imageSect infoSect'
         'skillSect skillSect';
+
 
 
 }
@@ -415,10 +418,34 @@ nav.sticky {
     position: fixed;
     transition: 0.6s;
     right: 0;
-    margin-right: 30px;
+    border-bottom-left-radius: 30px;
+    background-color: black;
 }
 
-@media (max-width: 768PX) {
+
+
+@media(max-width: 1068px) {
+
+    /*   about mediaquerys*/
+    #about-container .about-content {
+        grid-template-areas: 'imageSect skillSect'
+            'infoSect infoSect';
+        ;
+    }
+
+    #about-container {
+        height: 100%;
+    }
+
+    .skillSection {
+
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+
+    }
+}
+
+@media (max-width: 768px) {
     .menu #menuBtn {
         display: block;
     }
@@ -478,28 +505,7 @@ nav.sticky {
         right: 0px;
     }
 
-}
 
-@media(max-width: 1068px) {
-
-    /*   about mediaquerys*/
-    #about-container .about-content {
-        grid-template-areas: 'imageSect skillSect'
-            'infoSect infoSect';
-        ;
-
-
-    }
-
-    .skillSection {
-
-        grid-template-columns: 1fr;
-        grid-gap: 20px;
-
-    }
-}
-
-@media(max-width: 768px) {
     #about-container .about-content {
         grid-template-areas: 'imageSect'
             'infoSect'
@@ -515,6 +521,7 @@ nav.sticky {
 
     }
 }
+
 
 @media(max-width: 478px) {
     .imgPerson {
