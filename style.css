@@ -27,7 +27,7 @@ body {
 .container {
     width: 100%;
     height: 100vh;
-    background: black;
+    background: var(--main-background--);
     color: white;
 }
 
@@ -279,6 +279,7 @@ main .infoText {
     display: inline-block;
     margin-bottom: 5px;
     position: relative;
+    z-index: 1;
 
 }
 
@@ -363,6 +364,10 @@ main .infoText {
     transition: all 0.4s;
 }
 
+.infoSection button:active {
+    transform: scale(1.2);
+}
+
 /* section personal information ends <-- */
 
 /* skills starts here -->*/
@@ -420,6 +425,7 @@ nav.sticky {
     right: 0;
     border-bottom-left-radius: 30px;
     background-color: black;
+    z-index: 3;
 }
 
 
