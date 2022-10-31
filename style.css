@@ -428,6 +428,11 @@ nav.sticky {
     z-index: 3;
 }
 
+/* portfolio section */
+#portfolio {
+    height: 100vh;
+    background: var(--main-background--);
+}
 
 
 @media(max-width: 1068px) {

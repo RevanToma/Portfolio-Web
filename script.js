@@ -26,12 +26,15 @@ aboutMeButton.addEventListener('click', () => {
 
 });
 
+let resume = fetch('resume.JSON').then(response => {
+    return response.json();
+}).then(resume => {
+    // do something with the data here
+    console.log(resume.myInformation);
+    // const resumeInfo = document.querySelector('.portfolioInfo').textContent = JSON.stringify(resume);
+    // const lis = document.createElement('li')
+    // lis.innerHTML = resumeInfo;
+    // resumeInfo.appendChild(li);   
 
 
-
-// hideAboutMe.addEventListener('click', () => {
-//     aboutMeButton.innerHTML = 'show less';
-//     if (hideAboutMe) {
-//         aboutMeText.removeChild(aboutMe);
-//     }
-// })
+});

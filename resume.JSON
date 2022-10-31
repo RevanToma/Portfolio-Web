@@ -1,0 +1,109 @@
+{
+    "myInformation": {
+        "name": "Revan Toma",
+        "label": "Programmer",
+        "email": "revantoma@chasacademy.se",
+        "phone": "07045777**",
+        "url": "https://revantoma.github.io/Portfolio-Web/",
+        "location": {
+            "address": "Frestavägen 36",
+            "postalCode": "19254",
+            "city": "sollentuna",
+            "region": "Stockholm"
+        }
+    },
+    "jobs": [
+        {
+            "name": "Sätra vård & omsorgboende",
+            "position": "employee",
+            "startDate": "2009-06",
+            "endDate": "2010-05",
+            "summary": "Helped with feeding the elders, taking walks with them and planing diffrent events."
+        },
+        {
+            "name": "Bileliten",
+            "position": "Car mechanic",
+            "startDate": "2013-08",
+            "endDate": "2015-09",
+            "summary": "Normal employee, as car mechanic. Did everything from simple tasks to more advanced such as cam belt."
+        }
+    ],
+    "educations": [
+        {
+            "institution": "High-School",
+            "url": "https://praktiska.se/stockholm-liljeholmen/",
+            "education": "Car mechanic",
+            "startDate": "2010-08",
+            "endDate": "2013-06",
+            "score": "2800"
+        },
+        {
+            "institution": "Försvarsmakten",
+            "url": "https://www.forsvarsmakten.se/sv/",
+            "education": "Anti-tank gunnery",
+            "startDate": "2015-10",
+            "endDate": "2016-07",
+            "score": ""
+        }
+    ],
+    "skills": [
+        {
+            "name": "Fullstack JavaScript",
+            "level": "Student",
+            "keywords": [
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ],
+            "Competence": [
+                "Fast learner",
+                "Complex problem solving",
+                "Ability to work under pressure"
+            ]
+        }
+    ],
+    "languages": [
+        {
+            "language": "English",
+            "fluency": "fluent"
+        },
+        {
+            "language": "Swedish",
+            "fluency": "fluent"
+        },
+        {
+            "language": "Arabic",
+            "fluency": "Native speaker"
+        },
+        {
+            "language": "Assyrian",
+            "fluency": "Native speaker"
+        }
+    ],
+    "interests": [
+        {
+            "keywords": [
+                "gym",
+                "learn to code",
+                "hang out with friends and girlfriend"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "Guess-Number",
+            "description": "A mini game were you play VS AI, trying to guess the right number",
+            "url": "https://github.com/RevanToma/Guess-num"
+        },
+        {
+            "name": "Rock-paper-scissors",
+            "description": "A rock paper scissors game",
+            "url": "https://github.com/RevanToma/rock-paper-scissors"
+        },
+        {
+            "name": "Calculator",
+            "description": "No description needed for this project.",
+            "url": "https://github.com/RevanToma/First-Calculator"
+        }
+    ]
+}
