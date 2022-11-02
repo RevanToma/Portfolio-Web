@@ -1,17 +1,19 @@
 {
-    "myInformation": {
-        "name": "Revan Toma",
-        "label": "Programmer",
-        "email": "revantoma@chasacademy.se",
-        "phone": "07045777**",
-        "url": "https://revantoma.github.io/Portfolio-Web/",
-        "location": {
-            "address": "Frestavägen 36",
-            "postalCode": "19254",
-            "city": "sollentuna",
-            "region": "Stockholm"
+    "myInformation": [
+        {
+            "name": "Revan Toma",
+            "label": "Programmer",
+            "email": "revan.toma@chasacademy.se",
+            "phone": "07045777**",
+            "url": "https://revantoma.github.io/Portfolio-Web/",
+            "location": {
+                "address": "Frestavägen 36",
+                "postalCode": "19254",
+                "city": "Sollentuna",
+                "region": "Stockholm"
+            }
         }
-    },
+    ],
     "jobs": [
         {
             "name": "Sätra vård & omsorgboende",
@@ -43,7 +45,7 @@
             "education": "Anti-tank gunnery",
             "startDate": "2015-10",
             "endDate": "2016-07",
-            "score": ""
+            "position": "Sharp shooter"
         }
     ],
     "skills": [
@@ -51,11 +53,11 @@
             "name": "Fullstack JavaScript",
             "level": "Student",
             "keywords": [
-                "HTML",
-                "CSS",
-                "JavaScript"
+                " HTML",
+                " CSS ",
+                " JavaScript"
             ],
-            "Competence": [
+            "competence": [
                 "Fast learner",
                 "Complex problem solving",
                 "Ability to work under pressure"
@@ -85,7 +87,8 @@
             "keywords": [
                 "gym",
                 "learn to code",
-                "hang out with friends and girlfriend"
+                "game",
+                "hang out with friends and family"
             ]
         }
     ]

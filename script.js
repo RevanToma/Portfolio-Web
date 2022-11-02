@@ -1,44 +1,41 @@
 
-const loremText = [`Lorem, ipsum dolor sit amet consectetur adipisicing elit, 
-Cupiditate voluptates quam inventore tempora eveniet necessitatibus quibusdam aliquid
-ipsum dolor sit amet consectetur adipisicing elit. Cupiditate voluptates quam inventore.
-tempora eveniet necessitatibus quibusdam aliquid id neque cumque aut explicabo fugiat
-voluptate. Lorem, ipsum dolor sit amet consectetur adipisicing elit, 
-Cupiditate voluptates quam inventore tempora eveniet necessitatibus quibusdam aliquid
-ipsum dolor sit amet consectetur adipisicing elit. Cupiditate voluptates quam inventore.
-tempora eveniet necessitatibus quibusdam aliquid id neque cumque aut explicabo fugiat
-voluptate.`];
+// const loremText = [`Lorem, ipsum dolor sit amet consectetur adipisicing elit, 
+// Cupiditate voluptates quam inventore tempora eveniet necessitatibus quibusdam aliquid
+// ipsum dolor sit amet consectetur adipisicing elit. Cupiditate voluptates quam inventore.
+// tempora eveniet necessitatibus quibusdam aliquid id neque cumque aut explicabo fugiat
+// voluptate. Lorem, ipsum dolor sit amet consectetur adipisicing elit, 
+// Cupiditate voluptates quam inventore tempora eveniet necessitatibus quibusdam aliquid
+// ipsum dolor sit amet consectetur adipisicing elit. Cupiditate voluptates quam inventore.
+// tempora eveniet necessitatibus quibusdam aliquid id neque cumque aut explicabo fugiat
+// voluptate.`];
 
-const aboutMeText = document.querySelector('.aboutMeText');
-const aboutMeButton = document.querySelector('.moreAboutMe');
 
-aboutMeButton.addEventListener('click', () => {
 
-    const aboutMe = document.createElement('p');
-    aboutMe.classList.add('infoSectionPara');
-    aboutMe.textContent = loremText;
-    aboutMeText.appendChild(aboutMe);
+// let aboutMeText = document.querySelector('.aboutMeText');
 
-    if (aboutMeButton) {
-        aboutMeButton.setAttribute('disabled', '');
-        aboutMeButton.innerHTML = 'show less';
-    }
 
-});
+
+
+
+
+// const aboutMe = document.createElement('p');
+// aboutMe.classList.add('infoSectionPara');
+// aboutMe.textContent = loremText;
+// aboutMeText.appendChild(aboutMe);
+
+
 
 
 
 let portfolio = document.querySelector('#portfolio');
-
-
 async function getRepos() {
-    let url = "https:api.github.com/users/RevanToma/repos"
-    let response = await fetch(url);
+    let repos = "https:api.github.com/users/RevanToma/repos"
+    let response = await fetch(repos);
 
     if (response.ok) {
         let data = await response.json();
-        console.log(data);
-        // DOM print out.
+
+        // DOM output here
 
         for (let i = 0; i < data.length; i++) {
             if (data[i].stargazers_count != 0) {
