@@ -1,42 +1,14 @@
-
-// const loremText = [`Lorem, ipsum dolor sit amet consectetur adipisicing elit, 
-// Cupiditate voluptates quam inventore tempora eveniet necessitatibus quibusdam aliquid
-// ipsum dolor sit amet consectetur adipisicing elit. Cupiditate voluptates quam inventore.
-// tempora eveniet necessitatibus quibusdam aliquid id neque cumque aut explicabo fugiat
-// voluptate. Lorem, ipsum dolor sit amet consectetur adipisicing elit, 
-// Cupiditate voluptates quam inventore tempora eveniet necessitatibus quibusdam aliquid
-// ipsum dolor sit amet consectetur adipisicing elit. Cupiditate voluptates quam inventore.
-// tempora eveniet necessitatibus quibusdam aliquid id neque cumque aut explicabo fugiat
-// voluptate.`];
-
-
-
-// let aboutMeText = document.querySelector('.aboutMeText');
-
-
-
-
-
-
-// const aboutMe = document.createElement('p');
-// aboutMe.classList.add('infoSectionPara');
-// aboutMe.textContent = loremText;
-// aboutMeText.appendChild(aboutMe);
-
-
-
-
-
 let portfolio = document.querySelector('#portfolio');
 async function getRepos() {
     let repos = "https:api.github.com/users/RevanToma/repos"
+
     let response = await fetch(repos);
 
     if (response.ok) {
         let data = await response.json();
 
         // DOM output here
-
+        console.log(data);
         for (let i = 0; i < data.length; i++) {
             if (data[i].stargazers_count != 0) {
 

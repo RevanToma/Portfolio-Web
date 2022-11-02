@@ -108,5 +108,4 @@ async function getResume() {
     }
 
 }
-let paraGraph = document.querySelector('.resumeInfo ul p');
-console.log(paraGraph);
+
