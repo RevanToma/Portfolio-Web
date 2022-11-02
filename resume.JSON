@@ -88,22 +88,5 @@
                 "hang out with friends and girlfriend"
             ]
         }
-    ],
-    "projects": [
-        {
-            "name": "Guess-Number",
-            "description": "A mini game were you play VS AI, trying to guess the right number",
-            "url": "https://github.com/RevanToma/Guess-num"
-        },
-        {
-            "name": "Rock-paper-scissors",
-            "description": "A rock paper scissors game",
-            "url": "https://github.com/RevanToma/rock-paper-scissors"
-        },
-        {
-            "name": "Calculator",
-            "description": "No description needed for this project.",
-            "url": "https://github.com/RevanToma/First-Calculator"
-        }
     ]
 }

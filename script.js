@@ -26,15 +26,34 @@ aboutMeButton.addEventListener('click', () => {
 
 });
 
-let resume = fetch('resume.JSON').then(response => {
-    return response.json();
-}).then(resume => {
-    // do something with the data here
-    console.log(resume.myInformation);
-    // const resumeInfo = document.querySelector('.portfolioInfo').textContent = JSON.stringify(resume);
-    // const lis = document.createElement('li')
-    // lis.innerHTML = resumeInfo;
-    // resumeInfo.appendChild(li);   
 
 
-});
+let portfolio = document.querySelector('#portfolio');
+
+
+async function getRepos() {
+    let url = "https:api.github.com/users/RevanToma/repos"
+    let response = await fetch(url);
+
+    if (response.ok) {
+        let data = await response.json();
+        console.log(data);
+        // DOM print out.
+
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].stargazers_count != 0) {
+
+                let article = "<article><header><h2>" + data[i].name + "</h2></header><p>" + data[i].description + "</p>"
+                    + "<ul><li><button><a href=" + data[i].html_url + " target=_blank>Github Repo</a></button></li><li><button><a href=" + data[i].homepage
+                    + " target=_blank>Deployed App</a></li></ul></article>";
+
+                portfolio.innerHTML += article;
+            }
+        }
+
+
+    } else {
+        console.log('HTTP-Error: ' + response.status);
+    }
+}
+getRepos();
