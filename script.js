@@ -1,6 +1,6 @@
 let portfolio = document.querySelector('#portfolio');
 async function getRepos() {
-    let repos = "https:api.github.com/users/RevanToma/repos"
+    let repos = "api.github.com/users/RevanToma/repos"
 
     let response = await fetch(repos);
 
