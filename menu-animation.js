@@ -1,5 +1,6 @@
 let menuBtn = document.querySelector('#menuBtn');
 let menu = document.querySelector('.menu ul');
+let menuA = document.querySelector('nav.menu a');
 document.querySelectorAll('ul li a[href^="#"]').forEach(link => {
     link.addEventListener('click', function (e) {
         e.preventDefault();
@@ -40,29 +41,34 @@ window.addEventListener('scroll', () => {
 const sections = document.querySelectorAll('section[id]');
 
 // add another event listener for scroll
-window.addEventListener('scroll', navHighlight);
+// window.addEventListener('scroll', navHighlight);
 
-function navHighlight() {
-    // current scroll position
-    let scrollY = window.pageYOffset;
 
-    //loop thru all sections
-    sections.forEach(current => {
-        const sectionHeight = current.offsetHeight;
-        const sectionTop = current.offsetTop - 50;
-        let sectionId = current.getAttribute('id');
 
-        //if current scroll position enter the space where current seciton on screen is
-        //add active class else remove it
-        if (scrollY > sectionTop && scrollY <= sectionHeight) {
-            document.querySelector('.menu li a[href*=' + sectionId + ']').classList.add('active');
 
-        } else {
-            document.querySelector('.menu li a[href*=' + sectionId + ']').classList.remove('active');
-        }
 
-    });
-}
+
+// function navHighlight() {
+//     // current scroll position
+//     let scrollY = window.pageYOffset;
+
+//     //loop thru all sections
+//     sections.forEach(current => {
+//         const sectionHeight = current.offsetHeight;
+//         const sectionTop = current.offsetTop;
+//         let sectionId = current.getAttribute('id');
+
+//         //if current scroll position enter the space where current seciton on screen is
+//         //add active class else remove it
+//         if (scrollY > sectionTop && scrollY <= sectionHeight) {
+//             document.querySelector('.menu li a[href*=' + sectionId + ']').classList.add('active');
+
+//         } else {
+//             document.querySelector('.menu li a[href*=' + sectionId + ']').classList.remove('active');
+//         }
+
+//     });
+// }
 
 
 // let menuItems = document.querySelectorAll('.menu ul li a');

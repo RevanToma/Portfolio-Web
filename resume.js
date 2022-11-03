@@ -37,7 +37,7 @@ function resumeShowLess() {
 
 async function getResume() {
 
-    let resume = "./resume.JSON"
+    let resume = "./resume.json"
     let response = await fetch(resume);
 
     let data = await response.json();
