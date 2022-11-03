@@ -6,17 +6,17 @@ loading.innerHTML += `Please wait while we load your Github Repos. `;
 async function getRepos() {
 
     let repos = "https://api.github.com/users/RevanToma/repos"
-    let response = await fetch(repos);
-    const url = "./repoImgs.json"
+    let responseRepos = await fetch(repos);
 
-    let response2 = await fetch(url);
+    const getRepoImgs = "./repoImgs.json"
+    let responseGetRepoImgs = await fetch(getRepoImgs);
 
 
-    if (response.ok && response2.ok) {
+    if (responseRepos.ok && responseGetRepoImgs.ok) {
         // DOM output here
         loading.innerHTML = '';
-        let data = await response.json();
-        let imagesJson = await response2.json();
+        let data = await responseRepos.json();
+        let imagesJson = await responseGetRepoImgs.json();
 
         let imagesJsonIds = imagesJson.map(o => o.id);
         let filteredJson = data.filter(o => imagesJsonIds.includes(o.id));

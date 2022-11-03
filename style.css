@@ -386,14 +386,34 @@ main .infoText {
     border-radius: 5px;
     border-color: var(--main-color--);
     background-color: crimson;
-    color: crimson;
+    color: white;
     background-color: black;
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.4s;
     margin-top: 20px;
+    animation: buttonAnimation 2.5s ease infinite;
+    text-transform: uppercase;
 
 }
+
+@keyframes buttonAnimation {
+
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-20px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
 
 button.buttonDownload {
     background-color: #400305;

@@ -7,7 +7,6 @@ const personalInfo = document.querySelector('.personalInfo');
 showLess.style.display = 'none';
 
 
-
 aboutMeButton.addEventListener('click', () => {
 
     getResume();
@@ -17,9 +16,6 @@ aboutMeButton.addEventListener('click', () => {
     // aboutMeButton.setAttribute('disabled', '');
     aboutMeButton.style.display = 'none';
     showLess.style.display = '';
-
-
-
 
 
 
