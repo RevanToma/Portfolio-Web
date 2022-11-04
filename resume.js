@@ -4,9 +4,12 @@ const aboutMeButton = document.querySelector('.moreAboutMe');
 let resumeInfo = document.querySelector('.resumeInfo');
 const skillSection = document.querySelector('.skillSection');
 const personalInfo = document.querySelector('.personalInfo');
+
+
+
 showLess.style.display = 'none';
 
-
+// load my resume json on DOM on click.
 aboutMeButton.addEventListener('click', () => {
 
     getResume();
@@ -22,6 +25,7 @@ aboutMeButton.addEventListener('click', () => {
 
 });
 
+// hide the resume json information.
 function resumeShowLess() {
     showLess.addEventListener('click', () => {
 
@@ -33,7 +37,7 @@ function resumeShowLess() {
 
 async function getResume() {
 
-    let resume = "./resume.json"
+    let resume = "./resume.json";
     let response = await fetch(resume);
 
     let data = await response.json();
@@ -93,11 +97,12 @@ async function getResume() {
         }
         for (let interest of data.interests) {
 
-            let Interest = "<ul><h3>Interests: </h3><li>" + interest.keywords[0] + "</li><li>" + interest.keywords[1] + "</li><li>"
-                + interest.keywords[2] + "</li><li>" + interest.keywords[3] + "</li></ul>";
+            let Interest = `<ul><h3>Interests:</h3><li> ${interest.keywords[0]} </li><li> ${interest.keywords[1]} </li><li> ${interest.keywords[2]} </li>
+            <li> ${interest.keywords[3]} </li><li> ${interest.keywords[4]} </li></ul>`;
 
 
             resumeInfo.innerHTML += Interest;
+
 
         }
 

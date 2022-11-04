@@ -3,7 +3,7 @@
 
 :root {
     --menu-color--: #fff;
-    --main-color--: crimson;
+    --main-color--: #dc143c;
     --main-background--: linear-gradient(rgb(69, 5, 5), black);
 }
 
@@ -27,7 +27,7 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--main-background--);
+    background: black;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -92,14 +92,17 @@ body {
 
 }
 
+
+
 .menu ul li a {
     position: relative;
     display: block;
     color: ghostwhite;
     font-size: 20px;
-
-
 }
+
+
+
 
 .menu ul li a::after {
     content: '';
@@ -107,11 +110,10 @@ body {
     width: 100%;
     height: 1px;
     background-color: var(--main-color--);
-
     top: 110%;
     left: 0;
     border-radius: 5px;
-    transform: 0.4s;
+    transition: 0.4s;
     transform: scale(0);
 
 }
@@ -285,7 +287,7 @@ main .infoText {
     object-fit: cover;
     position: relative;
     z-index: 2;
-    /* filter: invert(100%); */
+
 
 
 }
@@ -446,7 +448,7 @@ button.buttonDownload:hover {
 
 .skillSection .subject {
     font-size: 17px;
-    font-weight: thin;
+    font-weight: lighter;
     color: var(--menu-color--);
     padding-bottom: 10px;
     text-transform: uppercase;
@@ -490,7 +492,9 @@ nav.sticky {
     position: fixed;
     transition: 0.6s;
     right: 0;
-    border-bottom-left-radius: 30px;
+    border-bottom-left-radius: 25px;
+
+    width: 100%;
     background-color: black;
     z-index: 3;
 }
@@ -500,6 +504,7 @@ nav.sticky {
     text-align: center;
     z-index: 5;
     height: 100vh;
+
 }
 
 .dot {
@@ -557,18 +562,21 @@ nav.sticky {
     width: 100%;
     font-size: 1.5rem;
     display: grid;
+    background: var(--main-background--);
 
 
 }
 
 #portfolio article {
-    background: var(--main-background--);
+
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 1em;
     width: 100%;
     height: 100%;
     text-align: center;
+    box-shadow: 0px 0px 14px 8px #000000;
+
 
 }
 
@@ -659,17 +667,27 @@ nav.sticky {
 
 }
 
-/* .resumeInfo ul:nth-child(2) {
-    color: red;
+/*Resume styling ends here <--*/
+
+/* services styling starts here -->*/
+#services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    background: var(--main-background--);
+
 }
 
-.resumeInfo ul:nth-child(3) {
-    color: black;
+#services h2 {
+    font-size: 2.5rem;
+    color: var(--menu-color--);
+    text-shadow: -4px 0px 3px #dc143c;
+    margin: 0.5em;
 }
 
-.resumeInfo ul:nth-child(4) {
-    color: black;
-} */
+
 
 @media(max-width: 1195px) {
     .resumeInfo {
@@ -732,6 +750,7 @@ nav.sticky {
         border-top: 1px solid black;
         transition: right 0.4s cubic-bezier(1, 0.2, 0.2, 1);
 
+
     }
 
     .menu ul li {
@@ -790,9 +809,7 @@ nav.sticky {
 }
 
 @media(max-width: 478px) {
-    /* .imgPerson {
-        display: none;
-    } */
+
 
     #about-container .about-content {
         grid-template-areas:
