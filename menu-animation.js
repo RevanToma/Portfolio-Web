@@ -26,7 +26,7 @@ menuBtn.addEventListener('click', () => {
 
 });
 // hide menu after clicking on a link or/ clicking outside the menu
-window.document.addEventListener('pointerenter', (e) => {
+window.document.addEventListener('mouseover', (e) => {
     if (e.target !== menuBtn && e.target !== menu) {
         menuBtn.classList.remove('active');
         menu.classList.remove('active');
