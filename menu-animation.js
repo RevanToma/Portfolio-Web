@@ -1,11 +1,8 @@
 const menuBtn = document.querySelector('#menuBtn');
 const menu = document.querySelector('.menu ul');
-
-
-
-
-
 const selectAllAnchors = document.querySelectorAll('ul li a[href^="#"]');
+
+
 // smooth scroll animation when navigating
 selectAllAnchors.forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -14,10 +11,38 @@ selectAllAnchors.forEach(anchor => {
             behavior: "smooth"
         });
 
-
     });
-
 });
+
+
+// set event to HTML document for 'active' class toggle on anchors.
+// set anchor to a number and check if the clicked anchor === number ? toggle : remove.
+document.addEventListener("DOMContentLoaded", () => {
+    const home = document.querySelector('.home');
+    home.classList.toggle('active');
+    if (selectAllAnchors) {
+
+
+        selectAllAnchors.forEach((anchor, key) => {
+
+            anchor.addEventListener('click', () => {
+                console.log(anchor);
+                home.classList.remove('active');
+                anchor.classList.toggle("active");
+
+                console.log(key);
+                selectAllAnchors.forEach((anchors, number) => {
+                    if (key !== number) {
+                        anchors.classList.remove('active');
+                    }
+                });
+            });
+        });
+    }
+});
+
+
+
 
 // hamburger menu.
 menuBtn.addEventListener('click', () => {
@@ -44,7 +69,7 @@ window.addEventListener('scroll', () => {
 
 const loadingg = document.querySelector('.loading');
 const services = document.querySelector('#services');
-console.log(services);
+
 services.innerHTML += `<article><header><h2>Services not avaiable at this moment. Please revisit 2024 when im done with my education!
                         </h2></header></article> `;
 
@@ -58,6 +83,18 @@ services.innerHTML += `<article><header><h2>Services not avaiable at this moment
 
 
 
+// menuA.forEach(a => {
+//     a.addEventListener('click', (e) => {
+//         e.stopPropagation();
+//         const active = document.querySelector('active');
+
+//         if (active) {
+
+//             e.currentTarget.classList.remove('active');
+//         }
+//         e.currentTarget.classList.add('active');
+//     });
+// });
 
 
 

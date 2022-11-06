@@ -1,6 +1,6 @@
 let portfolio = document.querySelector('#portfolio');
 const loading = document.querySelector('.loading');
-loading.innerHTML += `Please wait while we load your Github Repos. `;
+loading.innerHTML += `<p>Please wait while we load your Github Repos.</p> `;
 
 
 async function getRepos() {
@@ -31,9 +31,10 @@ async function getRepos() {
 
             let foundIds = imagesJson.find(function (imageObject) { return imageObject.id === filteredJson[i].id });
 
-            let article = `<article><li><img src=" ${foundIds.src}"><header><h2>${filteredJson[i].name}</h2></header><p> ${filteredJson[i].description}</p>
-                <li><button><a href=" ${filteredJson[i].html_url} " target=_blank>Github Repo</a></button></li><li><button><a href=" ${filteredJson[i].homepage} " target=_blank>
-                Play Game</a></li></article>`;
+            let article = `<article><li><img class="image1" src=" ${foundIds.src}"><header><h2>${filteredJson[i].name}</h2>
+                    </header><p> ${filteredJson[i].description}</p>
+                    <li><button><a href=" ${filteredJson[i].html_url} " target=_blank>Github Repo</a></button></li>
+                    <li><button><a href=" ${filteredJson[i].homepage} " target=_blank>Play Game</a></li></article>`;
 
             portfolio.innerHTML += article;
 
