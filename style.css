@@ -242,10 +242,10 @@ main .infoText {
     width: 100%;
     padding: 50px 8%;
     background: var(--main-background--);
-    height: 100%;
 
 
 }
+
 
 .current {
     color: #df3e23;
@@ -259,6 +259,10 @@ main .infoText {
 .infoSection {
     grid-area: infoSect;
 
+}
+
+.infoSection #me {
+    color: var(--main-color--);
 }
 
 .skillSection {
@@ -396,27 +400,11 @@ main .infoText {
     cursor: pointer;
     transition: all 0.4s;
     margin-top: 20px;
-    animation: buttonAnimation 2.5s ease infinite;
+
     text-transform: uppercase;
 
 }
 
-@keyframes buttonAnimation {
-
-    50%,
-    80%,
-    100% {
-        transform: translateY(0);
-    }
-
-    40% {
-        transform: translateY(-20px);
-    }
-
-    60% {
-        transform: translateY(-15px);
-    }
-}
 
 
 button.buttonDownload {
@@ -495,10 +483,10 @@ nav.sticky {
     transition: 0.6s;
     right: 0;
     border-bottom-left-radius: 25px;
-
     width: 100%;
     background-color: black;
     z-index: 3;
+    opacity: 0.9;
 }
 
 /* portfolio section */
@@ -636,6 +624,7 @@ nav.sticky {
     grid-template-columns: auto auto auto;
     grid-gap: 1.2em;
     color: white;
+
 
 }
 
