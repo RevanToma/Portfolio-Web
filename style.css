@@ -293,8 +293,8 @@ main .infoText {
     object-fit: cover;
     position: relative;
     z-index: 2;
-
-
+    aspect-ratio: 1/1;
+    transition: all 0.3s ease;
 
 }
 
