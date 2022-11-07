@@ -6,7 +6,6 @@ const skillSection = document.querySelector('.skillSection'); // Skill section.
 const personalInfo = document.querySelector('.personalInfo'); // Default personal info display when resume info is not showing.
 
 
-
 showLess.style.display = 'none';
 
 // Load my resume json on DOM on click.
@@ -62,8 +61,8 @@ async function getResume() {
         }
         for (let job of data.jobs) {
 
-            let Job = `<ul><h3>Job:${job.name}</h3><p>Position: ${job.position}<p><p>Start date: ${job.startDate}</p><p>End date: ${job.endDate}</p><p>Position: ${job.position}
-            </p></ul>`;
+            let Job = `<ul><h3>Job:${job.name}</h3><li>Position: ${job.position}</li><li>Start date: ${job.startDate}</li><li>End date: ${job.endDate}</li><li>Position: ${job.position}
+            </li></ul>`;
             resumeInfo.innerHTML += Job;
 
 
@@ -74,7 +73,7 @@ async function getResume() {
 
 
             let Educations = `<ul><h3> ${datas.institution} </h3><li><a href=" ${datas.url} " target=_blank>URL</a></li><li>Education: ${datas.education}</li>
-            <p>Start date: ${datas.startDate}</p><p>End date: ${datas.endDate}</p><p>Position: ${datas.position}</p></ul>`;
+            <li>Start date: ${datas.startDate}</li><li>End date: ${datas.endDate}</li><li>Position: ${datas.position}</li></ul>`;
 
             resumeInfo.innerHTML += Educations;
         }
@@ -90,7 +89,7 @@ async function getResume() {
         for (let language of data.languages) {
 
 
-            let Language = `<ul><h3>Languages:</h3><p>Name:  ${language.language}</p><p>Fluency : ${language.fluency}</p></ul>`;
+            let Language = `<ul><h3>Language:</h3><li>Name:  ${language.language}</li><li>Fluency : ${language.fluency}</li></ul>`;
 
             resumeInfo.innerHTML += Language;
 

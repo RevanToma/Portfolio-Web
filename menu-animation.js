@@ -18,6 +18,7 @@ selectAllAnchors.forEach(anchor => {
 // set event to HTML document for 'active' class toggle on anchors.
 // set anchor to a number and check if the clicked anchor === number ? toggle : remove.
 document.addEventListener("DOMContentLoaded", () => {
+
     const home = document.querySelector('.home');
     home.classList.toggle('active');
     if (selectAllAnchors) {
@@ -70,7 +71,7 @@ window.addEventListener('scroll', () => {
 const loadingg = document.querySelector('.loading');
 const services = document.querySelector('#services');
 
-services.innerHTML += `<article><header><h2>Services not avaiable at this moment. Please revisit 2024 when im done with my education!
+services.innerHTML += `<article><header><h2>Services not available at this moment. Please revisit 2024 when im done with my education!
                         </h2></header></article> `;
 
 
