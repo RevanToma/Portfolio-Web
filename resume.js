@@ -5,7 +5,6 @@ const resumeInfo = document.querySelector('.resumeInfo'); // Resume info article
 const skillSection = document.querySelector('.skillSection'); // Skill section.
 const personalInfo = document.querySelector('.personalInfo'); // Default personal info display when resume info is not showing.
 
-
 showLess.style.display = 'none';
 
 // Load my resume json on DOM on click.
@@ -17,6 +16,9 @@ aboutMeButton.addEventListener('click', () => {
     personalInfo.style.visibility = 'hidden';
     aboutMeButton.style.display = 'none';
     showLess.style.display = '';
+
+
+
     resumeShowLess(); // Hide resume after loading it once.
 
 });

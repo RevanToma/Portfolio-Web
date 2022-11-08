@@ -562,27 +562,32 @@ nav.sticky {
 #portfolio article {
 
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns:  auto;
     grid-gap: 1em;
     width: 100%;
     height: 100%;
-    text-align: center;
+    place-items: center;
     box-shadow: 0px 0px 14px 8px #000000;
+    text-align: center;
 
 
 
 }
+#portfolio article li{
+    margin: auto;
+}
 
-#portfolio img {
-    width: 40%;
+#portfolio img {    
     cursor: pointer;
     transition: all 0.4s ease;
     border-radius: 15px;
+    width: 450px;
+    height: 100%;
 
 }
 
 #portfolio img:hover {
-    transform: scale(1.5);
+    transform: scale(1.03);
 }
 
 #portfolio p,
@@ -826,10 +831,11 @@ nav.sticky {
         width: 80vw;
     }
 
-    img.image1:hover {
-        position: absolute;
+    #portfolio img {
         z-index: 1;
-        transform: scale(1.6);
+        zoom: 150%;        
+        width: 50%;
+
     }
 
 }
