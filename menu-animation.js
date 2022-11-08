@@ -27,11 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
         selectAllAnchors.forEach((anchor, key) => {
 
             anchor.addEventListener('click', () => {
-                console.log(anchor);
+
                 home.classList.remove('active');
                 anchor.classList.toggle("active");
 
-                console.log(key);
+
                 selectAllAnchors.forEach((anchors, number) => {
                     if (key !== number) {
                         anchors.classList.remove('active');
