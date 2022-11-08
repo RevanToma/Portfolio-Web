@@ -12,7 +12,7 @@ async function getRepos() {
     let responseGetRepoImgs = await fetch(getRepoImgs);
 
 
-
+console.log(repos);
     if (responseRepos.ok && responseGetRepoImgs.ok) {
         // DOM output here
         loading.innerHTML = '';

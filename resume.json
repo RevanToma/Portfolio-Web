@@ -60,8 +60,17 @@
             "startDate": "2015-10",
             "endDate": "2016-07",
             "position": "Sharp shooter"
+        },
+        {
+            "institution": "Bya Security School",
+            "url": "https://www.bya.se/",
+            "education": "Security",
+            "startDate": "2017-03",
+            "endDate": "Ongoing",
+            "position": "Patrol and emergency call guard"
         }
     ],
+
     "skills": [
         {
             "name": "Fullstack JavaScript",

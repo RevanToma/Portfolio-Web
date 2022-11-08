@@ -627,6 +627,9 @@ nav.sticky {
 
 
 }
+.resumeInfo .myinfoName{
+    list-style: none !important;
+}
 
 .resumeInfo li {
     list-style-type: disc;

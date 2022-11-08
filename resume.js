@@ -48,17 +48,33 @@ async function getResume() {
         // exempel, li * utbildningar > {alla key values}, ny li*ny utbdilning > {alla key values}     
 
 
+// console.log(data.myInformation);
+//         data.myInformation.forEach((myInfo) =>{
 
+//             const myInfoDetails = document.createElement('li');
+//             const myInfoDetailsList = document.createElement('ul');
+            
+//             const myInfoEntries = Object.entries(myInfo);
+//             myInfoEntries.forEach(([key, value]) =>{
 
-        for (let myInfo of data.myInformation) {
+//                 myInfoDetails.appendChild(myInfoDetailsList);
+//                 const myInfoItems = document.createElement('li');
+//                 myInfoItems.innerHTML = `${key}: ${value}`;
+//                 myInfoDetailsList.appendChild(myInfoItems);
+//                 resumeInfo.appendChild(myInfoDetails);
 
-            let myPersonalInformation = `<ul><h3>  ${myInfo.name} </h3><li><a href=" ${myInfo.url} " target=_blank>Portfolio Page</a></li><li>Email: ${myInfo.email}</li>
-            <li>Phone Num: ${myInfo.phone} </li><li>Label: ${myInfo.label} </li><li>City: ${myInfo.location.region} </li><p> ${myInfo.location.address} </p>
-            <p>Postal-Code: ${myInfo.location.postalCode} </p><p>Region: ${myInfo.location.city}</p></ul>`;
+//             });
+//         });
 
-            resumeInfo.innerHTML += myPersonalInformation;
+         for (let myInfo of data.myInformation) {
 
-        }
+             let myPersonalInformation = `<ul><li class="myinfoName"><h3> ${myInfo.name} </h3></li><li><a href=" ${myInfo.url} " target=_blank>Portfolio Page</a></li><li>Email: ${myInfo.email}</li>
+             <li>Phone Num: ${myInfo.phone} </li><li>Label: ${myInfo.label} </li><li>City: ${myInfo.location.region} </li><p> ${myInfo.location.address} </p>
+             <p>Postal-Code: ${myInfo.location.postalCode} </p><p>Region: ${myInfo.location.city}</p></ul>`;
+
+             resumeInfo.innerHTML += myPersonalInformation;
+
+         }
         for (let job of data.jobs) {
 
             let Job = `<ul><h3>Job:${job.name}</h3><li>Position: ${job.position}</li><li>Start date: ${job.startDate}</li><li>End date: ${job.endDate}</li><li>Position: ${job.position}
@@ -67,8 +83,6 @@ async function getResume() {
 
 
         }
-
-
         for (let datas of data.educations) {
 
 
