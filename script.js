@@ -16,9 +16,10 @@ async function getRepos() {
     if (responseRepos.ok && responseGetRepoImgs.ok) {
         // DOM output here
         loading.innerHTML = '';
+
         let data = await responseRepos.json();
         let imagesJson = await responseGetRepoImgs.json();
-
+        console.log(data);
 
         let imagesJsonIds = imagesJson.map(o => o.id);
         let filteredJson = data.filter(o => imagesJsonIds.includes(o.id));
