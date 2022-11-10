@@ -36,87 +36,100 @@ function resumeShowLess() {
     });
 }
 
+// Function to output to DOM
+function createResumeUl(string) {
 
+    const ul = document.createElement('ul');
+    ul.innerHTML = string;
+    resumeInfo.appendChild(ul);
+}
 
 async function getResume() {
 
     let resume = "./resume.json";
     let response = await fetch(resume);
 
-    let data = await response.json();
+
     if (response.ok) {
         // DOM output here
         // skapa en lista some innehåller varje object
         // exempel, li * utbildningar > {alla key values}, ny li*ny utbdilning > {alla key values}     
 
 
-// console.log(data.myInformation);
-//         data.myInformation.forEach((myInfo) =>{
+        // console.log(data.myInformation);
+        //         data.myInformation.forEach((myInfo) =>{
 
-//             const myInfoDetails = document.createElement('li');
-//             const myInfoDetailsList = document.createElement('ul');
-            
-//             const myInfoEntries = Object.entries(myInfo);
-//             myInfoEntries.forEach(([key, value]) =>{
+        //             const myInfoDetails = document.createElement('li');
+        //             const myInfoDetailsList = document.createElement('ul');
 
-//                 myInfoDetails.appendChild(myInfoDetailsList);
-//                 const myInfoItems = document.createElement('li');
-//                 myInfoItems.innerHTML = `${key}: ${value}`;
-//                 myInfoDetailsList.appendChild(myInfoItems);
-//                 resumeInfo.appendChild(myInfoDetails);
+        //             const myInfoEntries = Object.entries(myInfo);
+        //             myInfoEntries.forEach(([key, value]) =>{
 
-//             });
-//         });
+        //                 myInfoDetails.appendChild(myInfoDetailsList);
+        //                 const myInfoItems = document.createElement('li');
+        //                 myInfoItems.innerHTML = `${key}: ${value}`;
+        //                 myInfoDetailsList.appendChild(myInfoItems);
+        //                 resumeInfo.appendChild(myInfoDetails);
 
-         for (let myInfo of data.myInformation) {
+        //             });
+        //         });
+        let data = await response.json();
+        for (let myInfo of data.myInformation) {
 
-             let myPersonalInformation = `<ul><li class="myinfoName"><h3> ${myInfo.name} </h3></li><li><a href=" ${myInfo.url} " target=_blank>Portfolio Page</a></li><li>Email: ${myInfo.email}</li>
+            let myPersonalInformation = `<li class="myinfoName"><h3> ${myInfo.name} </h3></li><li><a href=" ${myInfo.url} " target=_blank>Portfolio Page</a></li><li>Email: ${myInfo.email}</li>
              <li>Phone Num: ${myInfo.phone} </li><li>Label: ${myInfo.label} </li><li>City: ${myInfo.location.region} </li><p> ${myInfo.location.address} </p>
-             <p>Postal-Code: ${myInfo.location.postalCode} </p><p>Region: ${myInfo.location.city}</p></ul>`;
+             <p>Postal-Code: ${myInfo.location.postalCode} </p><p>Region: ${myInfo.location.city}</p>`;
 
-             resumeInfo.innerHTML += myPersonalInformation;
+            createResumeUl(myPersonalInformation);
+            // resumeInfo.innerHTML += myPersonalInformation;
 
-         }
+
+        }
         for (let job of data.jobs) {
 
-            let Job = `<ul><h3>Job:${job.name}</h3><li>Position: ${job.position}</li><li>Start date: ${job.startDate}</li><li>End date: ${job.endDate}</li><li>Position: ${job.position}
-            </li></ul>`;
-            resumeInfo.innerHTML += Job;
+            let Job = `<h3>Job:${job.name}</h3><li>Position: ${job.position}</li><li>Start date: ${job.startDate}</li><li>End date: ${job.endDate}</li><li>Position: ${job.position}
+            </li>`;
+            // resumeInfo.innerHTML += Job;
+            createResumeUl(Job);
 
 
         }
         for (let datas of data.educations) {
 
 
-            let Educations = `<ul><h3> ${datas.institution} </h3><li><a href=" ${datas.url} " target=_blank>URL</a></li><li>Education: ${datas.education}</li>
-            <li>Start date: ${datas.startDate}</li><li>End date: ${datas.endDate}</li><li>Position: ${datas.position}</li></ul>`;
+            let Educations = `<h3> ${datas.institution} </h3><li><a href=" ${datas.url} " target=_blank>URL</a></li><li>Education: ${datas.education}</li>
+            <li>Start date: ${datas.startDate}</li><li>End date: ${datas.endDate}</li><li>Position: ${datas.position}</li>`;
 
-            resumeInfo.innerHTML += Educations;
+            // resumeInfo.innerHTML += Educations;
+            createResumeUl(Educations);
         }
         for (let skill of data.skills) {
 
 
-            let Skill = `<ul><h3>Skills: ${skill.name}</h3><p>Level: ${skill.level}</p><li><em>Keywords:</em> ${skill.keywords}</li><p><li><em>Competence:</em>
-             ${skill.competence}</li></ul>`;
+            let Skill = `<h3>Skills: ${skill.name}</h3><p>Level: ${skill.level}</p><li><em>Keywords:</em> ${skill.keywords}</li><p><li><em>Competence:</em>
+             ${skill.competence}</li>`;
 
-            resumeInfo.innerHTML += Skill;
+            // resumeInfo.innerHTML += Skill;
+            createResumeUl(Skill);
 
         }
         for (let language of data.languages) {
 
 
-            let Language = `<ul><h3>Language:</h3><li>Name:  ${language.language}</li><li>Fluency : ${language.fluency}</li></ul>`;
+            let Language = `<h3>Language:</h3><li>Name:  ${language.language}</li><li>Fluency : ${language.fluency}</li>`;
 
-            resumeInfo.innerHTML += Language;
+            // resumeInfo.innerHTML += Language;
+            createResumeUl(Language);
 
         }
         for (let interest of data.interests) {
 
-            let Interest = `<ul><h3>Interests:</h3><li> ${interest.keywords[0]} </li><li> ${interest.keywords[1]} </li><li> ${interest.keywords[2]}</li>
-            <li> ${interest.keywords[3]} </li><li> ${interest.keywords[4]} </li></ul> `;
+            let Interest = `<h3>Interests:</h3><li> ${interest.keywords[0]} </li><li> ${interest.keywords[1]} </li><li> ${interest.keywords[2]}</li>
+            <li> ${interest.keywords[3]} </li><li> ${interest.keywords[4]} </li>`;
 
 
-            resumeInfo.innerHTML += Interest;
+            // resumeInfo.innerHTML += Interest;
+            createResumeUl(Interest);
 
 
         }

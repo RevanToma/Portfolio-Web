@@ -15,29 +15,31 @@ async function getRepos() {
 
     if (responseRepos.ok && responseGetRepoImgs.ok) {
         // DOM output here
-        loading.innerHTML = '';
+        loading.style.display = 'none';
 
         let data = await responseRepos.json();
         let imagesJson = await responseGetRepoImgs.json();
         console.log(data);
 
-        let imagesJsonIds = imagesJson.map(o => o.id);
-        let filteredJson = data.filter(o => imagesJsonIds.includes(o.id));
+        let imagesJsonIds = imagesJson.map(objekt => objekt.id);
+        let filteredJson = data.filter(objekt => imagesJsonIds.includes(objekt.id));
 
 
 
 
         for (let i = 0; i < filteredJson.length; i++) {
 
-
+            const showMyRepos = document.createElement('article');
             let foundIds = imagesJson.find(function (imageObject) { return imageObject.id === filteredJson[i].id });
 
-            let article = `<article><ul><li><img class="image1" src=" ${foundIds.src}" alt="repoImage"><header><h2>${filteredJson[i].name}</h2>
+            let article = `<ul><li><img class="image1" src=" ${foundIds.src}" alt="repoImage"><header><h2>${filteredJson[i].name}</h2>
                     </header><p> ${filteredJson[i].description}</p></li>
                     <li><button><a href=" ${filteredJson[i].html_url} " target=_blank>Github Repo</a></button>
-                    <button><a href=" ${filteredJson[i].homepage} " target=_blank>Play Game</a></li></ul></article>`;
+                    <button><a href=" ${filteredJson[i].homepage} " target=_blank>Play Game</a></li></ul>`;
 
-            portfolio.innerHTML += article;
+            showMyRepos.innerHTML = article;
+
+            portfolio.appendChild(showMyRepos);
 
         }
 

@@ -557,6 +557,7 @@ nav.sticky {
     width: 100%;
     font-size: 1.5rem;
     display: grid;
+    grid-template-columns: auto auto;
     background: var(--main-background--);
 
 
@@ -768,6 +769,12 @@ nav.sticky {
         grid-template-columns: 1fr;
         grid-gap: 20px;
 
+    }
+}
+
+@media (max-width: 900px) {
+    #portfolio {
+        grid-template-columns: auto;
     }
 }
 
