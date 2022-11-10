@@ -29,17 +29,16 @@ async function getRepos() {
 
         for (let i = 0; i < filteredJson.length; i++) {
 
-            const showMyRepos = document.createElement('article');
+
             let foundIds = imagesJson.find(function (imageObject) { return imageObject.id === filteredJson[i].id });
 
-            let article = `<ul><li><img class="image1" src=" ${foundIds.src}" alt="repoImage"><header><h2>${filteredJson[i].name}</h2>
+            let article = `<article><li><img class="image1" src=" ${foundIds.src}" alt="repoImage"><header><h2>${filteredJson[i].name}</h2>
                     </header><p> ${filteredJson[i].description}</p></li>
                     <li><button><a href=" ${filteredJson[i].html_url} " target=_blank>Github Repo</a></button>
-                    <button><a href=" ${filteredJson[i].homepage} " target=_blank>Play Game</a></li></ul>`;
+                    <button><a href=" ${filteredJson[i].homepage} " target=_blank>Play Game</a></li></article>`;
 
-            showMyRepos.innerHTML = article;
 
-            portfolio.appendChild(showMyRepos);
+            portfolio.appendChild(createResumeUl(article));
 
         }
 

@@ -41,7 +41,7 @@ function createResumeUl(string) {
 
     const ul = document.createElement('ul');
     ul.innerHTML = string;
-    resumeInfo.appendChild(ul);
+    return ul;
 }
 
 async function getResume() {
@@ -81,7 +81,6 @@ async function getResume() {
              <p>Postal-Code: ${myInfo.location.postalCode} </p><p>Region: ${myInfo.location.city}</p>`;
 
             createResumeUl(myPersonalInformation);
-            // resumeInfo.innerHTML += myPersonalInformation;
 
 
         }
@@ -89,9 +88,8 @@ async function getResume() {
 
             let Job = `<h3>Job:${job.name}</h3><li>Position: ${job.position}</li><li>Start date: ${job.startDate}</li><li>End date: ${job.endDate}</li><li>Position: ${job.position}
             </li>`;
-            // resumeInfo.innerHTML += Job;
-            createResumeUl(Job);
 
+            resumeInfo.appendChild(createResumeUl(Job));
 
         }
         for (let datas of data.educations) {
@@ -100,8 +98,8 @@ async function getResume() {
             let Educations = `<h3> ${datas.institution} </h3><li><a href=" ${datas.url} " target=_blank>URL</a></li><li>Education: ${datas.education}</li>
             <li>Start date: ${datas.startDate}</li><li>End date: ${datas.endDate}</li><li>Position: ${datas.position}</li>`;
 
-            // resumeInfo.innerHTML += Educations;
-            createResumeUl(Educations);
+
+            resumeInfo.appendChild(createResumeUl(Educations));
         }
         for (let skill of data.skills) {
 
@@ -109,17 +107,15 @@ async function getResume() {
             let Skill = `<h3>Skills: ${skill.name}</h3><p>Level: ${skill.level}</p><li><em>Keywords:</em> ${skill.keywords}</li><p><li><em>Competence:</em>
              ${skill.competence}</li>`;
 
-            // resumeInfo.innerHTML += Skill;
-            createResumeUl(Skill);
 
+            resumeInfo.appendChild(createResumeUl(Skill));
         }
         for (let language of data.languages) {
 
 
             let Language = `<h3>Language:</h3><li>Name:  ${language.language}</li><li>Fluency : ${language.fluency}</li>`;
 
-            // resumeInfo.innerHTML += Language;
-            createResumeUl(Language);
+            resumeInfo.appendChild(createResumeUl(Language));
 
         }
         for (let interest of data.interests) {
@@ -128,8 +124,7 @@ async function getResume() {
             <li> ${interest.keywords[3]} </li><li> ${interest.keywords[4]} </li>`;
 
 
-            // resumeInfo.innerHTML += Interest;
-            createResumeUl(Interest);
+            resumeInfo.appendChild(createResumeUl(Interest));
 
 
         }
