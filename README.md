@@ -7,4 +7,4 @@
 
 
 ## Real portfolio page:
-https://revandev.netlify.app/
+revantdev.com
